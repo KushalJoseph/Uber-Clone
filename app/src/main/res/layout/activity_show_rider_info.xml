@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowRiderInfo">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="208dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="47dp"
+        android:text="Uber Request "
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/riderLoc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/riderLoc"
+        android:layout_width="325dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="28dp"
+        android:text="Rider Location:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="325dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Desired Destination"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/riderLoc" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="319dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Current distance"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/destination" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="156dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="45dp"
+        android:background="#85CF30"
+        android:onClick="acceptRequest"
+        android:text="Accept Request"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distance" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="158dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="#E18888"
+        android:onClick="cancel"
+        android:text="Cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

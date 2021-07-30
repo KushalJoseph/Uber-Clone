@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map_rider"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".RiderMap" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="181dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="#DC962E"
+        android:onClick="requestUber"
+        android:text="REQUEST UBER"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/destination" />
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="296dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="57dp"
+
+        android:ems="10"
+        android:hint="Where to?"
+        android:inputType="textPersonName"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.495"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.345" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="330dp"
+        android:layout_height="67dp"
+        android:alpha="0.5"
+        android:background="#F8CD4C"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="199dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="264dp"
+        android:background="#20E829"
+        android:text="Finish Request"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
