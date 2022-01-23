@@ -17,7 +17,5 @@ public class App extends Application {
                 .build()
         );
         ParseInstallation.getCurrentInstallation().saveInBackground();
-
-
     }
 }
