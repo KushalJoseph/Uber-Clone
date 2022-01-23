@@ -27,16 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
     CheckBox driver;
     CheckBox rider;
-    int riderOrDriver=0;
+    int riderOrDriver = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        driver=(CheckBox)findViewById(R.id.driver);
-        rider=(CheckBox)findViewById(R.id.rider);
+        
+        driver = (CheckBox)findViewById(R.id.driver);
+        rider = (CheckBox)findViewById(R.id.rider);
 
-        if(ParseUser.getCurrentUser()==null)
+        if(ParseUser.getCurrentUser() == null)
         {
             ParseAnonymousUtils.logIn(new LogInCallback() {
                 @Override
@@ -47,18 +48,18 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            if(ParseUser.getCurrentUser().getString("riderOrDriver")!=null)
+            if(ParseUser.getCurrentUser().getString("riderOrDriver") != null)
             {
                 if(ParseUser.getCurrentUser().getString("riderOrDriver").matches("rider"))
                 {
                     Toast.makeText(this, "Welcome rider", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),RiderMap.class);
+                    Intent intent = new Intent(getApplicationContext(),RiderMap.class);
                     startActivity(intent);
                 }
                 else if(ParseUser.getCurrentUser().getString("riderOrDriver").matches("driver"))
                 {
                     Toast.makeText(this, "Welcome driver", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),DriverMap.class);
+                    Intent intent = new Intent(getApplicationContext(),DriverMap.class);
                     startActivity(intent);
                 }
             }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 rider.setChecked(true);
                 driver.setChecked(false);
-                riderOrDriver=0;
+                riderOrDriver = 0;
             }
         });
         driver.setOnClickListener(new View.OnClickListener() {
@@ -76,25 +77,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 rider.setChecked(false);
                 driver.setChecked(true);
-                riderOrDriver=1;
+                riderOrDriver = 1;
             }
         });
     }
 
     public void next(View view)
     {
-        if(riderOrDriver==0)
+        if(riderOrDriver == 0)
         {
-            ParseUser.getCurrentUser().put("riderOrDriver","rider");
+            ParseUser.getCurrentUser().put("riderOrDriver", "rider");
             ParseUser.getCurrentUser().saveInBackground();
-            Intent intent=new Intent(getApplicationContext(),RiderMap.class);
+            Intent intent = new Intent(getApplicationContext(),RiderMap.class);
             startActivity(intent);
         }
         else
         {
-            ParseUser.getCurrentUser().put("riderOrDriver","driver");
+            ParseUser.getCurrentUser().put("riderOrDriver", "driver");
             ParseUser.getCurrentUser().saveInBackground();
-            Intent intent=new Intent(getApplicationContext(),DriverMap.class);
+            Intent intent = new Intent(getApplicationContext(),DriverMap.class);
             startActivity(intent);
         }
     }
